@@ -95,7 +95,7 @@ class App extends React.Component {
     document.querySelector('[data-id="' + e.currentTarget.dataset.id_parent + 'ageTo"]').value = this.state[e.currentTarget.dataset.id_parent + "ageTo"];
     document.querySelector('[data-id="' + e.currentTarget.dataset.id_parent + 'totalSessions"]').value = this.state[e.currentTarget.dataset.id_parent + "totalSessions"];
     document.querySelector('[data-id="' + e.currentTarget.dataset.id_parent + 'sessionsPerWeek"]').value = this.state[e.currentTarget.dataset.id_parent + "sessionsPerWeek"];
-    document.querySelector('[data-id="' + e.currentTarget.dataset.id_parent + 'description"]').value = this.state[e.currentTarget.dataset.id_parent + "description"];
+    document.querySelector('[data-id="' + e.currentTarget.dataset.id_parent + 'description"]').value = this.state[e.currentTarget.dataset.id_parent + "description"]; 
   }
 
   render() {
