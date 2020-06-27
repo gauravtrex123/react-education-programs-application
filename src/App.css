@@ -1,3 +1,89 @@
-.data-container{
-  border: 1px solid;
+* {
+  font-family: Muli;
 }
+
+.input-show {
+  display: none;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+  padding: 30px;
+  box-shadow: 0px 2px 3px;
+  border-radius: 8px;
+}
+
+.position-age-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.weeks-container, .description-container {
+  width: 100%;
+}
+
+.course-image img {
+  max-width: 370px;
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.position-age-container {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.weeks-container {
+  padding-bottom: 30px;
+}
+
+.position-input {
+  width: 100px;
+}
+
+.agefrom-input, .ageto-input, .totalsessions-input, .sessionsperweek-input {
+  width: 20px;
+}
+
+.button-container {
+  margin-left: auto;
+}
+
+.save-button {
+  display: none;
+}
+
+.position-display {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.age-display {
+  color: rgb(189, 180, 180);
+}
+
+.description-display {
+  color: rgb(189, 180, 180);
+  font-size: 13px;
+}
+
+.edit-button, .save-button {
+  border: 0px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.description-input {
+  padding-bottom: 10px;  
+}
+
+.description-input input{
+  width: 100%;
+} 

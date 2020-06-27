@@ -31,6 +31,7 @@ class App extends React.Component {
     this.eduProgram = [
       {
         position: "Astronmer",
+        imgCourse: "https://study.com/cimages/videopreview/videopreview-full/uyr8poxp8l.jpg",
         ageFrom: 6,
         ageTo: 7,
         totalSessions: 6,
@@ -39,6 +40,7 @@ class App extends React.Component {
       },
       {
         position: "Mathematician",
+        imgCourse: "https://study.com/cimages/videopreview/videopreview-full/uyr8poxp8l.jpg",
         ageFrom: 6,
         ageTo: 7,
         totalSessions: 6,
@@ -47,6 +49,7 @@ class App extends React.Component {
       },
       {
         position: "Writer",
+        imgCourse: "https://study.com/cimages/videopreview/videopreview-full/uyr8poxp8l.jpg",
         ageFrom: 6,
         ageTo: 7,
         totalSessions: 6,
@@ -75,6 +78,17 @@ class App extends React.Component {
     e.stopPropagation();
     console.log('........................');
     var that = this;
+    document.querySelectorAll('.' + e.target.dataset.id_button + '-input-show').forEach(function (v) {
+      v.style.display = 'none';
+    })
+
+    document.querySelectorAll('.' + e.target.dataset.id_button + '-display-show').forEach(function (v) {
+      v.style.display = 'block';
+    })
+
+    document.querySelector('.' + e.target.dataset.id_button + '-save-button').style.display = 'none';
+    document.querySelector('.' + e.target.dataset.id_button + '-edit-button').style.display = 'block';
+
     var tempObjSub = {
       [e.target.dataset.id_button]: document.querySelector('[data-id="' + e.target.dataset.id_button + '"]').value,
       [e.target.dataset.id_button + "ageFrom"]: document.querySelector('[data-id="' + e.target.dataset.id_button + 'ageFrom"]').value,
@@ -90,33 +104,53 @@ class App extends React.Component {
     e.persist();
     console.log(e);
     console.log('........................');
+    document.querySelectorAll('.' + e.target.dataset.id_parent + '-input-show').forEach(function (v) {
+      v.style.display = 'block';
+    })
+
+    document.querySelectorAll('.' + e.target.dataset.id_parent + '-display-show').forEach(function (v) {
+      v.style.display = 'none';
+    })
+
+    document.querySelector('.' + e.target.dataset.id_parent + '-save-button').style.display = 'block';
+    document.querySelector('.' + e.target.dataset.id_parent + '-edit-button').style.display = 'none';
+
     document.querySelector('[data-id="' + e.currentTarget.dataset.id_parent + '"]').value = this.state[e.currentTarget.dataset.id_parent];
     document.querySelector('[data-id="' + e.currentTarget.dataset.id_parent + 'ageFrom"]').value = this.state[e.currentTarget.dataset.id_parent + "ageFrom"];
     document.querySelector('[data-id="' + e.currentTarget.dataset.id_parent + 'ageTo"]').value = this.state[e.currentTarget.dataset.id_parent + "ageTo"];
     document.querySelector('[data-id="' + e.currentTarget.dataset.id_parent + 'totalSessions"]').value = this.state[e.currentTarget.dataset.id_parent + "totalSessions"];
     document.querySelector('[data-id="' + e.currentTarget.dataset.id_parent + 'sessionsPerWeek"]').value = this.state[e.currentTarget.dataset.id_parent + "sessionsPerWeek"];
-    document.querySelector('[data-id="' + e.currentTarget.dataset.id_parent + 'description"]').value = this.state[e.currentTarget.dataset.id_parent + "description"]; 
+    document.querySelector('[data-id="' + e.currentTarget.dataset.id_parent + 'description"]').value = this.state[e.currentTarget.dataset.id_parent + "description"];
   }
 
   render() {
     return (
-      <div>
+      <div className="main-container">
         {
           this.eduProgram.map((v, i) => {
             return (
-              <div key={v.position + i}>
-                <div className="data-container" >
-                  <div className="edit-button"><button data-id_parent={v.position} onClick={((e) => this.openChanges(e))}>Edit</button></div>
-                  <div className="position-display display-show">{this.state[v.position]}</div>
-                  <input className="position-input input-show" data-id={v.position} />
-                  <div className="age-display display-show">age from {this.state[v.position + "ageFrom"]} - {this.state[v.position + "ageTo"]}</div>
-                  <div className="age-input input-show">age from <input className="agefrom-input" data-id={v.position + "ageFrom"} /> - <input className="ageto-input" data-id={v.position + "ageTo"} /></div>
-                  <div className="weeks-display display-show">{this.state[v.position + "totalSessions"]} weeks | {this.state[v.position + "sessionsPerWeek"]} sessions per week</div>
-                  <div className="age-input input-show"><input className="totalsessions-input" data-id={v.position + "totalSessions"} /> weeks | <input className="sessionsperweek-input" data-id={v.position + "sessionsPerWeek"} /> sessions per week</div>
-                  <div className="description-display display-show">{this.state[v.position + "description"]}</div>
-                  <div className="description-display display-show"><input data-id={v.position + "description"} /></div>
-                  <div className="save-button"><button data-id_button={v.position} onClick={((e) => this.saveChanges(e))}>Save</button></div>
+              <div className="data-container" key={v.position + i}>
+                <div className="course-image"><img src={v.imgCourse} /></div>
+                <div className="position-age-container">
+                  <div className="position-container">
+                    <div className={"position-display display-show " + v.position + "-display-show"}>{this.state[v.position]}</div>
+                    <input className={"position-input input-show " + v.position + "-input-show"} data-id={v.position} />
+                  </div>
+                  <div className="age-container">
+                    <div className={"age-display display-show " + v.position + "-display-show"}>age from {this.state[v.position + "ageFrom"]} - {this.state[v.position + "ageTo"]}</div>
+                    <div className={"age-input input-show " + v.position + "-input-show"}>age from <input className="agefrom-input" data-id={v.position + "ageFrom"} /> - <input className="ageto-input" data-id={v.position + "ageTo"} /></div>
+                  </div>
                 </div>
+                <div className="weeks-container">
+                  <div className={"weeks-display display-show " + v.position + "-display-show"}>{this.state[v.position + "totalSessions"]} weeks | {this.state[v.position + "sessionsPerWeek"]} sessions per week</div>
+                  <div className={"age-input input-show " + v.position + "-input-show"}><input className="totalsessions-input" data-id={v.position + "totalSessions"} /> weeks | <input className="sessionsperweek-input" data-id={v.position + "sessionsPerWeek"} /> sessions per week</div>
+                </div>
+                <div className="description-container">
+                  <div className={"description-display display-show " + v.position + "-display-show"}>{this.state[v.position + "description"]}</div>
+                  <div className={"description-input input-show " + v.position + "-input-show"}><input data-id={v.position + "description"} /></div>
+                </div>
+                <div className="button-container"><button className={"edit-button " + v.position + "-edit-button"} data-id_parent={v.position} onClick={((e) => this.openChanges(e))}>Edit</button>
+                  <button className={"save-button " + v.position + "-save-button"} data-id_button={v.position} onClick={((e) => this.saveChanges(e))}>Save</button></div>
               </div>
             )
           })
