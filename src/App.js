@@ -1,62 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
+import data from './data.json';
 
 class App extends React.Component {
   constructor(props) {
     super(props)
 
     var tempObj = {};
-    this.eduProgram = [
-      {
-        position: "Astronmer",
-        imgCourse: "https://study.com/cimages/videopreview/videopreview-full/uyr8poxp8l.jpg",
-        ageFrom: 6,
-        ageTo: 7,
-        totalSessions: 6,
-        sessionsPerWeek: 2,
-        description: "Skills idea generation originality of choice"
-      },
-      {
-        position: "Mathematician",
-        imgCourse: "https://study.com/cimages/videopreview/videopreview-full/uyr8poxp8l.jpg",
-        ageFrom: 6,
-        ageTo: 7,
-        totalSessions: 6,
-        sessionsPerWeek: 2,
-        description: "Skills idea generation originality of choice"
-      },
-      {
-        position: "Writer",
-        imgCourse: "https://study.com/cimages/videopreview/videopreview-full/uyr8poxp8l.jpg",
-        ageFrom: 6,
-        ageTo: 7,
-        totalSessions: 6,
-        sessionsPerWeek: 2,
-        description: "Skills idea generation originality of choice"
-      }
-    ]
+    this.eduProgram = data;
 
     this.eduProgram.forEach((v) => {
       tempObj[v.position] = v.position;
@@ -131,26 +83,28 @@ class App extends React.Component {
             return (
               <div className="data-container" key={v.position + i}>
                 <div className="course-image"><img src={v.imgCourse} /></div>
-                <div className="position-age-container">
-                  <div className="position-container">
-                    <div className={"position-display display-show " + v.position + "-display-show"}>{this.state[v.position]}</div>
-                    <input className={"position-input input-show " + v.position + "-input-show"} data-id={v.position} />
+                <div className="second-container">
+                  <div className="position-age-container">
+                    <div className="position-container">
+                      <div className={"position-display display-show " + v.position + "-display-show"}>{this.state[v.position]}</div>
+                      <input className={"position-input input-show " + v.position + "-input-show"} data-id={v.position} />
+                    </div>
+                    <div className="age-container">
+                      <div className={"age-display display-show " + v.position + "-display-show"}>Age {this.state[v.position + "ageFrom"]} - {this.state[v.position + "ageTo"]}</div>
+                      <div className={"age-input input-show " + v.position + "-input-show"}>Age <input className="agefrom-input" data-id={v.position + "ageFrom"} /> - <input className="ageto-input" data-id={v.position + "ageTo"} /></div>
+                    </div>
                   </div>
-                  <div className="age-container">
-                    <div className={"age-display display-show " + v.position + "-display-show"}>age from {this.state[v.position + "ageFrom"]} - {this.state[v.position + "ageTo"]}</div>
-                    <div className={"age-input input-show " + v.position + "-input-show"}>age from <input className="agefrom-input" data-id={v.position + "ageFrom"} /> - <input className="ageto-input" data-id={v.position + "ageTo"} /></div>
+                  <div className="weeks-container">
+                    <div className={"weeks-display display-show " + v.position + "-display-show"}>{this.state[v.position + "totalSessions"]} sessions | {this.state[v.position + "sessionsPerWeek"]} per week</div>
+                    <div className={"age-input input-show " + v.position + "-input-show"}><input className="totalsessions-input" data-id={v.position + "totalSessions"} /> sessions | <input className="sessionsperweek-input" data-id={v.position + "sessionsPerWeek"} /> per week</div>
                   </div>
+                  <div className="description-container">
+                    <div className={"description-display display-show " + v.position + "-display-show"}>{this.state[v.position + "description"]}</div>
+                    <div className={"description-input input-show " + v.position + "-input-show"}><input data-id={v.position + "description"} /></div>
+                  </div>
+                  <div className="button-container"><button className={"edit-button " + v.position + "-edit-button"} data-id_parent={v.position} onClick={((e) => this.openChanges(e))}>Edit</button>
+                    <button className={"save-button " + v.position + "-save-button"} data-id_button={v.position} onClick={((e) => this.saveChanges(e))}>Save</button></div>
                 </div>
-                <div className="weeks-container">
-                  <div className={"weeks-display display-show " + v.position + "-display-show"}>{this.state[v.position + "totalSessions"]} weeks | {this.state[v.position + "sessionsPerWeek"]} sessions per week</div>
-                  <div className={"age-input input-show " + v.position + "-input-show"}><input className="totalsessions-input" data-id={v.position + "totalSessions"} /> weeks | <input className="sessionsperweek-input" data-id={v.position + "sessionsPerWeek"} /> sessions per week</div>
-                </div>
-                <div className="description-container">
-                  <div className={"description-display display-show " + v.position + "-display-show"}>{this.state[v.position + "description"]}</div>
-                  <div className={"description-input input-show " + v.position + "-input-show"}><input data-id={v.position + "description"} /></div>
-                </div>
-                <div className="button-container"><button className={"edit-button " + v.position + "-edit-button"} data-id_parent={v.position} onClick={((e) => this.openChanges(e))}>Edit</button>
-                  <button className={"save-button " + v.position + "-save-button"} data-id_button={v.position} onClick={((e) => this.saveChanges(e))}>Save</button></div>
               </div>
             )
           })

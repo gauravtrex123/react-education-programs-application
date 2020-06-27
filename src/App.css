@@ -78,12 +78,33 @@
   border: 0px;
   padding: 5px 10px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .description-input {
-  padding-bottom: 10px;  
+  padding-bottom: 10px;
 }
 
-.description-input input{
+.description-input input {
   width: 100%;
-} 
+}
+
+.second-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .data-container {
+    flex-direction: row;
+    align-items: start;
+    width: 100%;
+  }
+  .second-container {
+    width: 100%;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+}

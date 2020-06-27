@@ -1,0 +1,29 @@
+[
+    {
+      "position": "Astronmer",
+      "imgCourse": "https://study.com/cimages/videopreview/videopreview-full/uyr8poxp8l.jpg",
+      "ageFrom": 6,
+      "ageTo": 7,
+      "totalSessions": 6,
+      "sessionsPerWeek": 2,
+      "description": "Skills idea generation originality of choice"
+    },
+    {
+      "position": "Mathematician",
+      "imgCourse": "https://study.com/cimages/videopreview/videopreview-full/uyr8poxp8l.jpg",
+      "ageFrom": 6,
+      "ageTo": 7,
+      "totalSessions": 6,
+      "sessionsPerWeek": 2,
+      "description": "Skills idea generation originality of choice"
+    },
+    {
+      "position": "Writer",
+      "imgCourse": "https://study.com/cimages/videopreview/videopreview-full/uyr8poxp8l.jpg",
+      "ageFrom": 6,
+      "ageTo": 7,
+      "totalSessions": 6,
+      "sessionsPerWeek": 2,
+      "description": "Skills idea generation originality of choice"
+    }
+  ]
