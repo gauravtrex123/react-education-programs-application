@@ -49,7 +49,7 @@ class App extends React.Component {
       [e.target.dataset.id_button + "sessionsPerWeek"]: document.querySelector('[data-id="' + e.target.dataset.id_button + 'sessionsPerWeek"]').value,
       [e.target.dataset.id_button + "description"]: document.querySelector('[data-id="' + e.target.dataset.id_button + 'description"]').value
     } 
-    this.setState(tempObjSub);
+    this.setState(tempObjSub); 
   }
 
   openChanges(e) {
