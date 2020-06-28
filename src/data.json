@@ -1,6 +1,6 @@
 [
     {
-        "position": "Astronmer",
+        "position": "Astronomer",
         "imgCourse": "https://previews.123rf.com/images/krisdog/krisdog1502/krisdog150200146/36958518-a-diagram-of-the-planets-in-our-solar-system-with-the-planets-names.jpg",
         "ageFrom": 6,
         "ageTo": 7,
@@ -47,6 +47,33 @@
     {
         "position": "Engineer",
         "imgCourse": "https://previews.123rf.com/images/kwangmoo/kwangmoo1801/kwangmoo180100310/93656931-young-business-man-professional-engineer-worker-at-the-house-building-construction-site-with-bluepri.jpg",
+        "ageFrom": 6,
+        "ageTo": 7,
+        "totalSessions": 6,
+        "sessionsPerWeek": 2,
+        "description": "Skills idea generation originality of choice"
+    },
+    {
+        "position": "Zoologist",
+        "imgCourse": "https://previews.123rf.com/images/rawpixel/rawpixel1901/rawpixel190103460/115871902-vintage-safari-animals-set-vector.jpg",
+        "ageFrom": 6,
+        "ageTo": 7,
+        "totalSessions": 6,
+        "sessionsPerWeek": 2,
+        "description": "Skills idea generation originality of choice"
+    },
+    {
+        "position": "Theatre Artist",
+        "imgCourse": "https://previews.123rf.com/images/fergregory/fergregory1509/fergregory150900133/44405691-theater-curtain-and-stage-with-dramatic-lighting.jpg",
+        "ageFrom": 6,
+        "ageTo": 7,
+        "totalSessions": 6,
+        "sessionsPerWeek": 2,
+        "description": "Skills idea generation originality of choice"
+    },
+    {
+        "position": "Geologist",
+        "imgCourse": "https://previews.123rf.com/images/photonsinaction/photonsinaction1705/photonsinaction170500014/78993277-aerial-view-on-the-colorful-rainbow-mountains-with-amazing-pattern-in-zhangye-danxia-landform-geolog.jpg",
         "ageFrom": 6,
         "ageTo": 7,
         "totalSessions": 6,
