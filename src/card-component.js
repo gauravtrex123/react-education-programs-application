@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 
 class CardComponent extends React.Component {
 
@@ -37,7 +36,7 @@ class CardComponent extends React.Component {
 
     render() {
         return (
-            <div className="data-container" key={this.state.position}>
+            <div className="data-container">
                 <div className="course-image"><img src={this.state.imgCourse} /></div>
                 <div className="second-container">
                     <form>
@@ -71,6 +70,7 @@ class CardComponent extends React.Component {
                                 <div className="description-input input-show"><input name="description" defaultValue={this.state.description} onChange={this.handleInputChange} /></div>
                             }
                         </div>
+                        <div className="view-detail-container">View Details</div>
                         <div className="button-container">
                             {this.state.mode == 'display' ?
                                 <button className="edit-button" name="edit" onClick={this.changeMode}>Edit</button>
