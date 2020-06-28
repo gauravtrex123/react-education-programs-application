@@ -2,10 +2,6 @@
   font-family: Muli;
 }
 
-.input-show {
-  display: none;
-}
-
 .data-container {
   display: flex;
   flex-direction: column;
@@ -54,10 +50,6 @@
 
 .button-container {
   margin-left: auto;
-}
-
-.save-button {
-  display: none;
 }
 
 .position-display {
