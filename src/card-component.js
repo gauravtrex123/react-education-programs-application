@@ -33,7 +33,7 @@ class CardComponent extends React.Component {
         this.setState({
            mode:event.target.name
         });
-    }
+    } 
 
     render() {
         return (
